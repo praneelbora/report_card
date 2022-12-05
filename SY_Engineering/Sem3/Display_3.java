@@ -1,5 +1,9 @@
 package SY_Engineering.Sem3;
-public class Marks_3 {
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class Display_3 extends Canvas
+{
     public static void display(Student_3[] arr) 
     {
         for (Student_3 student : arr) 

@@ -26,7 +26,7 @@ public class input_3 {
             
             studArr[i] = new Student_3(r, name, marks);
         }
-        Marks_3.display(studArr);
+        Display_3.display(studArr);
     }
     private static void marks_input(int arr[])
     {
