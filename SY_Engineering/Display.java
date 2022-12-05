@@ -8,8 +8,7 @@ import javax.imageio.ImageIO;
 
 public class Display {
 
-    public static void display(Student ob,int i) 
-    {
+    public static void display(Student ob, int i) {
 
         JFrame f = new JFrame();
         f.setSize(1000, 680);
@@ -22,30 +21,25 @@ public class Display {
         f.setVisible(true);
 
         try {
-            //saves the report card as a jpeg
+            // saves the report card as a jpeg
             BufferedImage image = new BufferedImage(1000, 680, BufferedImage.TYPE_INT_RGB);
             Graphics2D graphics2D = image.createGraphics();
             f.paint(graphics2D);
-            ImageIO.write(image, "jpeg", new File("Report_Cards/ReportCard_"+ob.roll_no+".jpeg"));
+            ImageIO.write(image, "jpeg", new File("Report_Cards/ReportCard_" + ob.roll_no + ".jpeg"));
             Thread.sleep(1000);
-
-        } 
-        catch (Exception exception) 
-        {
+            f.dispose();
+        } catch (Exception exception) {
         }
     }
 
-    
-
-    protected static void text_labels(Student st, JFrame f, Container c) 
-    {
+    protected static void text_labels(Student st, JFrame f, Container c) {
 
         labelBold(f, c, "Name: " + st.student_name, 210, 150, 450, 30, 25);
         labelBold(f, c, "Roll: " + Integer.toString(st.roll_no), 210, 190, 300, 30, 25);
         String sub[] = { "OOP : ", "ITVC : ", "DS : ", "COA : ", "DSM : " };
         String sec[] = { " IA", "ISE", "ESE", " Total", "CGPA" };
         String max[] = { " / 20", " / 30", " / 50", " / 100", " / 10" };
-        String CGPA[] = { "0", "0", "0", "0", "6", "7", "8", "9", "10", "10", "10" };
+        String CGPA[] = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "10", "10" };
         for (int i = 0; i < 5; i++) {
             int x = 200 + (100 * i);
             labelBold(f, c, sec[i], x, 250, 300, 30, 18);
@@ -54,7 +48,7 @@ public class Display {
                 "_____________________________________________________",
                 180, 275, 350, 30);
         label(f, c,
-                "________________________________",
+                "______________________________________________",
                 360, 275, 310, 30);
         float cgp = 0;
         for (int i = 0; i < 5; i++) {
@@ -72,13 +66,12 @@ public class Display {
                     "_____________________________________________________",
                     60, y + 25, 350, 30);
             label(f, c,
-                    "________________________________",
-                    360, y + 25, 310, 30);
+                    "______________________________________________",
+                    360, y + 25, 350, 30);
         }
         float avgCGPA = cgp / 5;
         labelBold(f, c, "Final CGPA", 750, 350, 250, 35, 30);
         labelBold(f, c, Float.toString(avgCGPA) + max[4], 790, 400, 250, 35, 30);
-        
 
     }
 
