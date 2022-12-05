@@ -8,6 +8,11 @@ import javax.imageio.ImageIO;
 
 public class Display {
     public static void display(Student ob, int i) {
+        // Creating a new JFrame, setting its size, setting its layout to null, getting
+        // its content
+        // pane, setting its background to white, printing the image, printing the text
+        // labels, and
+        // setting it to visible.
         JFrame f = new JFrame();
         f.setSize(1000, 680);
         f.setLayout(null);
@@ -18,8 +23,9 @@ public class Display {
         text_labels(ob, f, c);
         f.setVisible(true);
 
+        
+        // Saving the image as a jpeg file.
         try {
-            // saves the report card as a jpeg
             BufferedImage image = new BufferedImage(1000, 680, BufferedImage.TYPE_INT_RGB);
             Graphics2D graphics2D = image.createGraphics();
             f.paint(graphics2D);
@@ -32,6 +38,7 @@ public class Display {
 
     protected static void text_labels(Student st, JFrame f, Container c) {
 
+        // Printing the text on the report card.
         labelBold(f, c, "Name: " + st.student_name, 210, 150, 450, 30, 25);
         labelBold(f, c, "Roll: " + Integer.toString(st.roll_no), 210, 190, 300, 30, 25);
         String sub[] = { "OOP : ", "ITVC : ", "DS : ", "COA : ", "DSM : " };
@@ -73,15 +80,17 @@ public class Display {
 
     }
 
-    public static void labelBold(JFrame f, Container c, String str, int x, int y, int w, int h, int s) {
+    protected static void labelBold(JFrame f, Container c, String str, int x, int y, int w, int h, int s) {
+        // Creating a new JLabel, setting its text, setting its bounds, setting its font, and adding it
+        // to the container.
         JLabel l1 = new JLabel();
         l1.setText(str);
         l1.setBounds(x, y, w, h);
         l1.setFont(new Font("Serif", Font.BOLD, s));
         c.add(l1);
     }
-
-    public static void label(JFrame f, Container c, String str, int x, int y, int w, int h) {
+// Creating a new JLabel, setting its text, setting its bounds, and adding it to the container.
+    protected static void label(JFrame f, Container c, String str, int x, int y, int w, int h) {
         JLabel l1 = new JLabel();
         l1.setText(str);
         l1.setBounds(x, y, w, h);
@@ -90,6 +99,7 @@ public class Display {
 
     protected static void image_print(String name, JFrame f, Container c) {
 
+       // Printing the images on the report card.
         JLabel label1 = new JLabel();
         ImageIcon image1 = new ImageIcon("Assets/" + name + ".png");
         Image scalImage = image1.getImage().getScaledInstance(120, 120, Image.SCALE_DEFAULT);

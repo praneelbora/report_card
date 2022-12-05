@@ -29,6 +29,7 @@ public class accept_name implements ActionListener {
 
         b.addActionListener(this);
 
+        // Adding the components to the frame.
         f.add(enterName);
         f.add(name2);
         f.add(enterRoll);
@@ -42,6 +43,9 @@ public class accept_name implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+       // Getting the text from the text fields and then setting them to blank. Then it is calling the
+       // main method of the accept_marks class and passing the name, roll and i. Then it is disposing
+       // the frame.
         name = name2.getText();
         roll = Integer.parseInt(roll2.getText());
 

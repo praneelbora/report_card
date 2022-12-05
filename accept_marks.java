@@ -182,6 +182,7 @@ public class accept_marks implements ActionListener
         }
 
 
+        // Creating a button and adding it to the frame.
         JButton b=new JButton("Submit");  
         b.setBounds(873,610,95,30); 
         b.addActionListener(this);
