@@ -1,0 +1,1 @@
+accept_name.main(i);

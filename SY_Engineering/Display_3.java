@@ -7,20 +7,10 @@ import javax.imageio.ImageIO;
 
 public class Display_3 {
 
-    public static void display(Student_3[] arr) 
+    public static void display(Student_3 ob,int i) 
     {
         
-        for (Student_3 student : arr) 
-        {
-            System.out.println("\nRoll No: " + student.roll_no +"\nName: "+student.student_name);
-            System.out.println("OOPM: "+student.sub_marks[0]);        
-            System.out.println("ITVC: "+student.sub_marks[1]);        
-            System.out.println("DS: "+student.sub_marks[2]);        
-            System.out.println("COA: "+student.sub_marks[3]);
-            System.out.println("DSM: "+student.sub_marks[4]);            
-        } 
-        for(int i=0;i<arr.length;i++)
-        {
+            i=0;
             JFrame f=new JFrame();
             f.setSize(1000,600);
             f.setLayout(null);
@@ -28,10 +18,10 @@ public class Display_3 {
             c.setBackground(Color.WHITE);
 
             image_print(Integer.toString(i+1),f,c);
-            text_labels(arr[i],f,c);
+            text_labels(ob,f,c);
             try
             {
-                BufferedImage image = new BufferedImage(1000, 600, BufferedImage.TYPE_INT_RGB);
+                BufferedImage image = new BufferedImage(1000, 680, BufferedImage.TYPE_INT_RGB);
                 Graphics2D graphics2D = image.createGraphics();
                 f.paint(graphics2D);
                 ImageIO.write(image,"jpeg", new File("Report_Cards/image"+Integer.toString(i+1)+".jpeg"));
@@ -40,7 +30,7 @@ public class Display_3 {
             catch(Exception exception)
             {
             }
-        }
+        
         
     }
     protected static void text_labels(Student_3 st,JFrame f,Container c)

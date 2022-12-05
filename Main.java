@@ -1,9 +1,9 @@
 import javax.swing.*;
 
-import SY_Engineering.Student_3;
-import SY_Engineering.input_3;
-
+// import SY_Engineering.Student_3;
+// import SY_Engineering.input_3;
 import java.awt.event.*;
+
 public class Main implements ActionListener{
     JTextField tf1,tf2,tf3, nameTextField;
     JButton b1,b2;
@@ -86,32 +86,32 @@ public class Main implements ActionListener{
         
         // Student_3 st=new Student_3((Integer.parseInt(rollTextField.getText())),(nameTextField.getText()), marks));
 
+
+       tf1=new JTextField();
+       tf1.setBounds(50,50,150,20);
+
 //
-//        tf1=new JTextField();
-//        tf1.setBounds(50,50,150,20);
-//
-//
-//        tf2=new JTextField();
-//        tf2.setBounds(50,100,150,20);
-//
-//
-//        tf3=new JTextField();
-//        tf3.setBounds(50,150,150,20);
-//        tf3.setEditable(false);
-//
-//        b1=new JButton("+");
-//        b1.setBounds(50,200,50,50);
-//        b2=new JButton("-");
-//        b2.setBounds(120,200,50,50);
-//        b1.addActionListener(this);
-//        b2.addActionListener(this);
-//
-//
-//
-////        l2.setBounds(350,300, 100,30);
-////        f.add(l1); f.add(l2);
-//
-//        f.add(tf1);f.add(tf2);f.add(tf3);f.add(b1);f.add(b2);
+       tf2=new JTextField();
+       tf2.setBounds(50,100,150,20);
+
+
+       tf3=new JTextField();
+       tf3.setBounds(50,150,150,20);
+       tf3.setEditable(false);
+
+       b1=new JButton("+");
+       b1.setBounds(50,200,50,50);
+       b2=new JButton("-");
+       b2.setBounds(120,200,50,50);
+       b1.addActionListener(this);
+       b2.addActionListener(this);
+
+
+
+    //    l2.setBounds(350,300, 100,30);
+    //    f.add(l1); f.add(l2);
+
+       f.add(tf1);f.add(tf2);f.add(tf3);f.add(b1);f.add(b2);
         f.setSize(1000,600);
         f.setLayout(null);
         f.setVisible(true);
@@ -170,6 +170,7 @@ public class Main implements ActionListener{
         }
         String result=String.valueOf(c);
         tf3.setText(result);
+        System.out.println(tf3.getText());
     }
     public static void main(String[] args) {
         new Main();
