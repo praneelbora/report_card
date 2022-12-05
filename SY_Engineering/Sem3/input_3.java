@@ -1,30 +1,41 @@
 package SY_Engineering.Sem3;
 import java.util.*;
 public class input_3 {
+    static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Enter how many students data to beentered : ");
+        System.out.print("Enter how many students data to be entered : ");
         int n = in.nextInt();
         Student_3 studArr[] = new Student_3[n];
+        int marks[][]=new int[5][3];
+        
         for (int i = 0; i < n; i++) {
             System.out.print("Enter student roll no : ");
             int r = in.nextInt();
             System.out.print("Enter student name : ");
             String name = in.next();
             System.out.print("Enter student marks in OOP : ");
-            int mark1 = in.nextInt();
+            marks_input(marks[0]);
             System.out.print("Enter student marks in ITVC : ");
-            int mark2 = in.nextInt();
+            marks_input(marks[1]);
             System.out.print("Enter student marks in DS : ");
-            int mark3 = in.nextInt();
+            marks_input(marks[2]);
             System.out.print("Enter student marks in COA : ");
-            int mark4 = in.nextInt();
+            marks_input(marks[3]);
             System.out.print("Enter student marks in DSM : ");
-            int mark5 = in.nextInt();
-            int arr[] = { mark1, mark2, mark3 ,mark4,mark5};
-            studArr[i] = new Student_3(r, name, arr);
+            marks_input(marks[4]);
+            
+            studArr[i] = new Student_3(r, name, marks);
         }
-        in.close();
-
+        Marks_3.display(studArr);
+    }
+    private static void marks_input(int arr[])
+    {
+        
+        System.out.println("Enter CA Marks: ");
+        arr[0]=in.nextInt();
+        System.out.println("Enter ISE Marks: ");
+        arr[1]=in.nextInt();
+        System.out.println("Enter ESE Marks: ");
+        arr[2]=in.nextInt();
     }
 }

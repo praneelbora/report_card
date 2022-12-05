@@ -2,9 +2,7 @@ import java.util.Scanner;
 
 
 import SY_Engineering.Sem3.input_3;
-
 import SY_Engineering.Sem4.input_4;
-
 public class project {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -26,5 +24,5 @@ public class project {
                 System.out.println("Wrong Input");
             }
         }
-        
+        in.close();
 } }
