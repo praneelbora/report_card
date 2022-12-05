@@ -1,6 +1,9 @@
 package SY_Engineering;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
 
 public class Display_3 {
 
@@ -23,7 +26,16 @@ public class Display_3 {
         c.setBackground(Color.WHITE);
         image_print("1",f,c);
         text_labels(arr[0],f,c);
-
+        try
+        {
+            BufferedImage image = new BufferedImage(1000, 600, BufferedImage.TYPE_INT_RGB);
+            Graphics2D graphics2D = image.createGraphics();
+            f.paint(graphics2D);
+            ImageIO.write(image,"jpeg", new File("Assets/image.jpeg"));
+        }
+        catch(Exception exception)
+        {
+        }
     }
     protected static void text_labels(Student_3 st,JFrame f,Container c)
     {
@@ -33,22 +45,6 @@ public class Display_3 {
         label(f,c,"Roll: "+Integer.toString(st.roll_no),30,175,300,20);
         System.out.println(2);
         label(f,c,"ITVC",30,200,300,30);
-        // label(f,c,"IA",30,175,300,20);
-        // label(f,c,"Roll",30,175,300,20);
-        // label(f,c,"Roll",30,175,300,20);
-        
-        // String data[][]={   {"OOP",Integer.toString(st.subject_marks[0][0]),"670000"},    
-        //                     {"ITVC",Integer.toString(st.subject_marks[1][0]),"780000"},
-        //                     {"DS",Integer.toString(st.subject_marks[2][0]),"780000"},    
-        //                     {"COA",Integer.toString(st.subject_marks[3][0]),"780000"},
-        //                     {"DSM",Integer.toString(st.subject_marks[4][0]),"700000"}};  
-        //                     System.out.println("OOPS"); 
-        // String column[]={"Course","IA","TW"};//,"ISE","ESE","Total"};         
-        // JTable jt=new JTable(data,column);    
-        // jt.setBounds(30,40,200,300);   
-        // f.setVisible(true);
-
-
     }
     public static void label(JFrame f,Container c,String str,int x,int y,int w,int h)
     {
@@ -59,8 +55,6 @@ public class Display_3 {
     }
     protected static void image_print(String name,JFrame f,Container c)
     {
-        
-
         JLabel label1=new JLabel();
         ImageIcon image1=new ImageIcon("Assets/"+name+".png");
         Image scalImage=image1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
