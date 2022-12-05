@@ -2,7 +2,7 @@ package SY_Engineering;
 // import javax.swing.*;
 import java.util.*;
 
-import javax.swing.JFrame;
+// import javax.swing.JFrame;
 public class input_3 {
     static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
