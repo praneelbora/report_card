@@ -1,14 +1,14 @@
 package SY_Engineering;
 
 
-public class Student_3 {
+public class Student {
     int roll_no;
     String student_name;
     int subject_marks[][] = new int[5][3];  //individual CA ISE ESE
     int sub_marks[]=new int[5];
-    public Student_3(int r, String n, int[][] sm) {
-        this.roll_no = r;
-        this.student_name = n;
+    public Student(int roll, String name, int[][] sm) {
+        this.roll_no = roll;
+        this.student_name = name;
         this.subject_marks = sm;
         totalMarks(sm,this.sub_marks);
 

@@ -1,13 +1,11 @@
 import javax.swing.*;
-import javax.xml.transform.Source;
-
 import java.awt.event.*;
-import SY_Engineering.input_3;
 
 public class accept_name implements ActionListener
 {
     JTextField name2,roll2;
-    String name;int roll;
+    String name;
+    int roll;
     JFrame f= new JFrame();
     int i=0;
     accept_name(int i)
@@ -47,17 +45,15 @@ public class accept_name implements ActionListener
     {
         name=name2.getText();
         roll=Integer.parseInt(roll2.getText());
-        // System.out.println(name);
-        // System.out.println(roll);
-        f.repaint();
+
         name2.setText("");
         roll2.setText("");
-        
-        accept_marks.main(name,roll,i);
 
+        accept_marks.main(name,roll,i);
+        f.dispose();
     }
-    public static void main(int i) {
-        System.out.println(i);
-        if(i!=0) new accept_name(i-1);
+    public static void main(int i) 
+    {
+        new accept_name(i);
     }
 }

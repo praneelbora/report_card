@@ -1,20 +1,39 @@
-import java.util.Scanner;
-import SY_Engineering.input_3;
+import javax.swing.*;
+import java.awt.event.*;
 
-// import javax.swing.*;
-// import java.awt.*;
-public class project {
-    public static void main(String[] args) 
+public class project implements ActionListener{
+    JTextField numField;
+    JFrame f= new JFrame();
+    project()
     {
-        Scanner in = new Scanner(System.in);
-        trying ob = new trying();
-        int n=ob.n;
-        // for(int i=0;i<n;i++)
-        // {
-        //     System.out.println("RAN");
-        //     new accept_name(i+1);
-        // }
-        // input_3.main(args);
-        in.close();
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JLabel enterNum = new JLabel("Number of Students: ");
+        enterNum.setBounds(10,10, 200,50);
+        
+        numField = new JTextField();
+        numField.setBounds(230, 10, 200, 50);
+        JButton b=new JButton("Submit");  
+        b.setBounds(500,100,95,30);  
+        b.addActionListener(this);
+        
+        f.add(numField);
+        f.add(enterNum);
+        f.add(b);
+        f.setSize(1000,680);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+    public void actionPerformed(ActionEvent e) {
+        
+        String str=numField.getText();
+        int a=Integer.parseInt(str);
+        f.dispose();
+        int num=0;
+        for(int j=0;j<a+1;j++,num++)
+            accept_name.main(num);
+    }
+    public static void main(String[] args) 
+    {   
+        new project();
     } 
 }
