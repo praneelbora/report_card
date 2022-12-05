@@ -7,9 +7,7 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
 public class Display {
-
     public static void display(Student ob, int i) {
-
         JFrame f = new JFrame();
         f.setSize(1000, 680);
         f.setLayout(null);
@@ -102,7 +100,7 @@ public class Display {
         JLabel label2 = new JLabel();
         int w = 240, h = 80;
         int x = 675, y = 30;
-        ImageIcon image2 = new ImageIcon("Assets/somaiya_logo.png");
+        ImageIcon image2 = new ImageIcon("Assets/somaiya_1.png");
         Image scaleImage = image2.getImage().getScaledInstance(w, h, Image.SCALE_DEFAULT);
         label2.setIcon(new ImageIcon(scaleImage));
         label2.setBounds(x, y, w, h);
